@@ -4,7 +4,7 @@
 LOCAL_PORT=${1-8080}
 
 echo "Start ngrok in background on port [ $LOCAL_PORT ]"
-nohup ngrok http ${LOCAL_PORT} &>/dev/null &
+nohup ./tutorial-splc22/ngrok http ${LOCAL_PORT} &>/dev/null &
 
 echo -n "Extracting ngrok public url ."
 NGROK_PUBLIC_URL=""
