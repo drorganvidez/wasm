@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This loads pyodide from its cdn. You can host it by yourself if needed-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <!-- This script holds the logic-->
+    <script src="index.js" defer></script>
+    <title>Basic Flama WASM Template</title>
+
+</head>
+<body>
+    <div>
+        The textarea below is intented to write a UVL file than can be later analyzed
+        <textarea id="uvlfile" style="width: 100%;" rows="20">
+        namespace Pizza
+        
+        features
+            Pizza {abstract}	
+                mandatory
+                    Topping	
+                        or
+                            Salami
+                            Ham
+                            Mozzarella
+                    Size	
+                        alternative
+                            Normal
+                            Big
+                    Dough	
+                        alternative
+                            Neapolitan
+                            Sicilian
+        
+                optional
+                    CheesyCrust
+        
+        constraints
+            CheesyCrust =&gt; Big
+        </textarea>
+    </div>
+
+    <div>
+        <button onclick="products()">Get products</button>
+        <button onclick="valid()">Is a valid model?</button>
+        <button onclick="numberofproducts()">What's the number of products?</button>
+    </div>
+    
+    <div>
+        <h2>The output is:</h2>
+        <div id="loading" style="display:none;"><img src="/files/loading.gif" width="100px" /> Loading, more details in the javascript console </div> 
+        <div id="result"><div id="loading" style="display:none;"></div></div>
+    </div>
+</body>
+</html>
+
