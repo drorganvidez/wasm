@@ -7,7 +7,8 @@ function hideLoading(){
 	document.getElementById("loading").style.display = "none";
 
 }
-		
+
+/*
 async function valid() {
     //This call directly to the function that shows the loding gif in the page
 	showLoading()
@@ -61,6 +62,7 @@ js.document.getElementById('result').append(div)
         console.log(err);
     }
 }
+*/
 
  async function products() {
     //This call directly to the function that shows the loding gif in the page
@@ -71,8 +73,8 @@ js.document.getElementById('result').append(div)
     const micropip = pyodide.pyimport("micropip");
     
     //Now we install our custom wheels for antlr4 so its wasm compatible
-	await micropip.install("http://localhost:8000/files/antlr4_python3_runtime-4.7.2-py3-none-any.whl");
-    await micropip.install("http://localhost:8000/files/antlr4_python3_runtime-4.13.1-py3-none-any.whl");
+	// await micropip.install("http://localhost:8000/files/antlr4_python3_runtime-4.7.2-py3-none-any.whl");
+    // await micropip.install("http://localhost:8000/files/antlr4_python3_runtime-4.13.1-py3-none-any.whl");
     
     //Let's install Flama starting with the uvlparser==1.0.2
     await micropip.install("uvlparser==1.0.2");
